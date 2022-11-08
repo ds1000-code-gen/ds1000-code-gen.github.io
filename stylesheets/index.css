@@ -24,3 +24,13 @@
   padding-left: 2px;
   padding-right: 2px;
 }
+
+.bibtex-body{
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+}
+
+.icon-link{
+  margin-inline: 1rem;
+}
