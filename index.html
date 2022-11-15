@@ -267,6 +267,10 @@
             Here are more examples.
           </p>
 
+          <p>
+            Insertion:
+          </p>
+
           <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy positive integer array like this:
 a = array([1,0,3])
@@ -278,6 +282,105 @@ A:
 &lt;code&gt;
 import numpy as np
 a = np.array([1, 0, 3])
+&lt;/code&gt;
+BEGIN SOLUTION
+&lt;code&gt;
+[insert]
+&lt;/code&gt;
+END SOLUTION
+&lt;code&gt;
+print(b)
+&lt;/code&gt;
+</code></pre></div></div>
+
+          <p>
+            Completion:
+          </p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+Let's say I have a 1d numpy positive integer array like this:
+a = array([1,0,3])
+I would like to encode this as a 2D one-hot array(for natural number)
+b = array([[0,1,0,0], [1,0,0,0], [0,0,0,1]])
+The leftmost element corresponds to 0 in `a`(NO MATTER whether 0 appears in `a` or not.), and the rightmost vice versa.
+Is there a quick way to do this only using numpy? Quicker than just looping over a to set elements of b, that is.
+A:
+&lt;code&gt;
+import numpy as np
+a = np.array([1, 0, 3])
+&lt;/code&gt;
+b = ... # put solution in this variable
+BEGIN SOLUTION
+&lt;code&gt;
+</code></pre></div></div>
+
+          <p>
+            Surface Perturbation:
+          </p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+Let's say I have a 1d numpy positive integer array like this
+a = array([1,2,3])
+I would like to encode this as a 2D one-hot array(for natural number)
+b = array([[0,1,0,0], [0,0,1,0], [0,0,0,1]])
+The leftmost element corresponds to 0 in `a`(NO MATTER whether 0 appears in `a` or not.), and the rightmost corresponds to the largest number.
+Is there a quick way to do this only using numpy? Quicker than just looping over a to set elements of b, that is.
+A:
+&lt;code&gt;
+import numpy as np
+a = np.array([1, 0, 3])
+&lt;/code&gt;
+BEGIN SOLUTION
+&lt;code&gt;
+[insert]
+&lt;/code&gt;
+END SOLUTION
+&lt;code&gt;
+print(b)
+&lt;/code&gt;
+</code></pre></div></div>
+
+          <p>
+            Semantic Perturbation:
+          </p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+Let's say I have a 1d numpy integer array like this
+a = array([-1,0,3])
+I would like to encode this as a 2D one-hot array(for integers)
+b = array([[1,0,0,0,0], [0,1,0,0,0], [0,0,0,0,1]])
+The leftmost element always corresponds to the smallest element in `a`, and the rightmost vice versa.
+Is there a quick way to do this only using numpy? Quicker than just looping over a to set elements of b, that is.
+A:
+&lt;code&gt;
+import numpy as np
+a = np.array([-1, 0, 3])
+&lt;/code&gt;
+BEGIN SOLUTION
+&lt;code&gt;
+[insert]
+&lt;/code&gt;
+END SOLUTION
+&lt;code&gt;
+print(b)
+&lt;/code&gt;
+</code></pre></div></div>
+
+          <p>
+            Difficult Rewrite:
+          </p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+Let's say I have a 1d numpy array like this
+a = np.array([1.5,-0.4,1.3])
+I would like to encode this as a 2D one-hot array(only for elements appear in `a`)
+b = array([[0,0,1], [1,0,0], [0,1,0]])
+The leftmost element always corresponds to the smallest element in `a`, and the rightmost vice versa.
+Is there a quick way to do this only using numpy? Quicker than just looping over a to set elements of b, that is.
+A:
+&lt;code&gt;
+import numpy as np
+a = np.array([1.5, -0.4, 1.3])
 &lt;/code&gt;
 BEGIN SOLUTION
 &lt;code&gt;
