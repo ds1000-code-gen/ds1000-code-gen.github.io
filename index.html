@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="DS-1000: A Natural and Reliable Benchmark for Data Science Code">
+  <meta name="description" content="DS-1000: A Natural and Reliable Benchmark for Data Science Code">
   <meta name="keywords" content="DS-1000, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DS-1000: A Natural and Reliable Benchmark for Data Science Code</title>
@@ -22,19 +22,17 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.table.min.css">
-<!--  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+  <!--  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
   <link rel="stylesheet" href="./stylesheets/layout.css">
   <link rel="stylesheet" href="./stylesheets/index.css">
 
@@ -46,244 +44,286 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://hkunlp.github.io/">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://hkunlp.github.io/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
         </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://yale-lily.github.io/spider">
-            Spider
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
           </a>
-          <a class="navbar-item" href="https://unifiedskg.com">
-            UnifiedSKG
-          </a>
-          <a class="navbar-item" href="https://github.com/Yushi-Hu/IC-DST">
-            IC-DST
-          </a>
-          <a class="navbar-item" href="https://github.com/HKUNLP/icl-selective-annotation">
-            Selective Annotation
-          </a>
-          <a class="navbar-item" href="https://lm-code-binder.github.io/">
-            Binder
-          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://yale-lily.github.io/spider">
+              Spider
+            </a>
+            <a class="navbar-item" href="https://unifiedskg.com">
+              UnifiedSKG
+            </a>
+            <a class="navbar-item" href="https://github.com/Yushi-Hu/IC-DST">
+              IC-DST
+            </a>
+            <a class="navbar-item" href="https://github.com/HKUNLP/icl-selective-annotation">
+              Selective Annotation
+            </a>
+            <a class="navbar-item" href="https://lm-code-binder.github.io/">
+              Binder
+            </a>
+          </div>
         </div>
       </div>
+
     </div>
-
-  </div>
-</nav>
+  </nav>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DS-1000: A Natural and Reliable Benchmark for Data Science Code</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://baigker.github.io/Home-Page/">Chengxi Li*</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://halfrot.github.io/">Yuhang Lai*</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://rubywong123.github.io/">Yiming Wang*</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://tiiiger.github.io/">Tianyi Zhang*</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://ruiqi-zhong.github.io/">Ruiqi Zhong*</a><sup>4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a><sup>5,6</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://scottyih.org/">Scott Wen-tau Yih</a><sup>7</sup>
-            </span>
-            <span class="author-block">
-              <a href="http://dpfried.github.io/">Daniel Fried</a><sup>8</sup>
-            </span>
-            <span class="author-block">
-              <a href="http://www.sidaw.xyz/">Sida Wang</a><sup>7</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
-            <span class="author-block"><sup>2</sup>Peking University</span>
-            <span class="author-block"><sup>3</sup>Stanford University</span>
-            <span class="author-block"><sup>4</sup>University of California, Berkeley</span>
-            <span class="author-block"><sup>5</sup>University of Washington</span>
-            <span class="author-block"><sup>6</sup>Meta AI</span>
-            <span class="author-block"><sup>7</sup>Facebook AI Research</span>
-            <span class="author-block"><sup>8</sup>Carnegie Mellon University</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+            <h1 class="title is-1 publication-title">DS-1000: A Natural and Reliable Benchmark for Data Science Code
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://baigker.github.io/Home-Page/">Chengxi Li*</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://halfrot.github.io/">Yuhang Lai*</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://rubywong123.github.io/">Yiming Wang*</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://tiiiger.github.io/">Tianyi Zhang*</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ruiqi-zhong.github.io/">Ruiqi Zhong*</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a><sup>5,6</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://scottyih.org/">Scott Wen-tau Yih</a><sup>7</sup>
+              </span>
+              <span class="author-block">
+                <a href="http://dpfried.github.io/">Daniel Fried</a><sup>8</sup>
+              </span>
+              <span class="author-block">
+                <a href="http://www.sidaw.xyz/">Sida Wang</a><sup>7</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
+              <span class="author-block"><sup>2</sup>Peking University</span>
+              <span class="author-block"><sup>3</sup>Stanford University</span>
+              <span class="author-block"><sup>4</sup>University of California, Berkeley</span>
+              <span class="author-block"><sup>5</sup>University of Washington</span>
+              <span class="author-block"><sup>6</sup>Meta AI</span>
+              <span class="author-block"><sup>7</sup>Facebook AI Research</span>
+              <span class="author-block"><sup>8</sup>Carnegie Mellon University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
+                    </span>
+                    <span>Code</span>
                   </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/ds1000-code-gen/ds1000-code-gen.github.io"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-twitter"></i>
-                  </span>
-                  <span>Twitter</span>
+                    </span>
+                    <span>Twitter</span>
                   </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="subtitle has-text-centered">
-        DS-1000 is a code generation benchmark with a thousand data science questions spanning seven Python libraries that
-        (1) reflects diverse, realistic, and practical use cases,
-        (2) has a reliable metric,
-        (3) defends against memorization by perturbing questions.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We introduce DS-1000, a code generation benchmark with a thousand data science problems spanning
-            seven Python libraries, such as NumPy and Pandas. Compared to prior works, DS-1000 incorporates
-            three core features. First, our problems reflect diverse, realistic, and practical use cases since
-            we collected them from StackOverflow. Second, our automatic evaluation is reliable – only 1.8% of
-            the accepted solutions predicted by Codex-002 is incorrect; we achieve this with multi-criteria
-            metrics, checking both functional correctness by running test cases and surface form constraints
-            by restricting API usages or keywords. Finally, we proactively defend against memorization by
-            perturbing our problems; consequently, models pretrained on StackOverflow cannot rely on solutions
-            memorized during pretraining. The current best public system (Codex-002) achieves 34.6% accuracy,
-            leaving ample room for improvement.
-          </p>
-        </div>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          DS-1000 is a code generation benchmark with a thousand data science questions spanning seven Python libraries
+          that
+          (1) reflects diverse, realistic, and practical use cases,
+          (2) has a reliable metric,
+          (3) defends against memorization by perturbing questions.
+        </h2>
       </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
+  </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Example. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Example</h2>
-        <div class="content has-text-justified">
-          <p>
-            The figure below shows an example DS-1000 question (left), its reference solution (top right), and an expert-written
-            automatic multi-criteria evaluation (bottom right). To answer the question, the model needs to
-            fill in the solution; to pass our automatic evaluation, it needs to 1) return the correct output and 2)
-            avoid inefficient implementations that use for-loops.
-          </p>
-          <img src="static/images/fig1-example.jpg">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce DS-1000, a code generation benchmark with a thousand data science problems spanning
+              seven Python libraries, such as NumPy and Pandas. Compared to prior works, DS-1000 incorporates
+              three core features. First, our problems reflect diverse, realistic, and practical use cases since
+              we collected them from StackOverflow. Second, our automatic evaluation is reliable – only 1.8% of
+              the accepted solutions predicted by Codex-002 is incorrect; we achieve this with multi-criteria
+              metrics, checking both functional correctness by running test cases and surface form constraints
+              by restricting API usages or keywords. Finally, we proactively defend against memorization by
+              perturbing our problems; consequently, models pretrained on StackOverflow cannot rely on solutions
+              memorized during pretraining. The current best public system (Codex-002) achieves 34.6% accuracy,
+              leaving ample room for improvement.
+            </p>
+          </div>
         </div>
       </div>
+      <!--/ Abstract. -->
     </div>
-    <!--/ Example. -->
-  </div>
-</section>
+  </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Perturbation and Prompt. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Perturbation and Prompt</h2>
-        <div class="content has-text-justified">
-          <p>
-            For questions from Stack Overflow, we equipped them with prompts, test cases, and evaluation functions and called them Origin.
-            To prevent models simply recalling the solutions seen during pretraining, we have perturbed the questions in two ways:
-            surface perturbations and semantic perturbations.
-            To make DS-1000 more challenging, we additionally introduced Difficult Rewrite.
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Example. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Example</h2>
+          <div class="content has-text-justified">
+            <p>
+              The figure below shows an example DS-1000 question (left), its reference solution (top right), and an
+              expert-written
+              automatic multi-criteria evaluation (bottom right). To answer the question, the model needs to
+              fill in the solution; to pass our automatic evaluation, it needs to 1) return the correct output and 2)
+              avoid inefficient implementations that use for-loops.
+            </p>
+            <img src="static/images/fig1-example.jpg">
+          </div>
+        </div>
+      </div>
+      <!--/ Example. -->
+    </div>
+  </section>
 
-          <ul>
-            <li><strong>Origin:</strong> &nbsp;  Equipped them with a prompt, testcases, and an evaluation function.</li>
-            <li><strong>Surface Perturbation:</strong> &nbsp; We paraphrased the question or modified the code context in
-              the question, but the reference solution should stay the same after the perturbation. </li>
-            <li><strong>Semantic Perturbation:</strong> &nbsp; We changed the semantics of the reference solution without
-              changing its difficulty.</li>
-            <li><strong>Difficult Rewrite:</strong> &nbsp; More complex and more difficult.</li>
-          </ul>
 
-          <p>
-            We also provided an Insertion style prompt and a Completion style prompt for each question (including perturbation).
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Perturbation and Prompt. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Perturbation and Prompt</h2>
+          <div class="content has-text-justified">
+            <p>
+              For questions from Stack Overflow, we equipped them with prompts, test cases, and evaluation functions and
+              called them Origin.
+              To prevent models simply recalling the solutions seen during pretraining, we have perturbed the questions
+              in two ways:
+              surface perturbations and semantic perturbations.
+              To make DS-1000 more challenging, we additionally introduced Difficult Rewrite.
+            </p>
 
-          <ul>
-            <li><strong>Insertion:</strong> &nbsp; Models need to predict what should be written in the place of "[insert]".</li>
-            <li><strong>Completion:</strong> &nbsp; Models need to predict what should b written after the prompt. </li>
-          </ul>
+            <ul>
+              <li><strong>Origin:</strong> &nbsp; Equipped them with a prompt, testcases, and an evaluation function.
+              </li>
+              <li><strong>Surface Perturbation:</strong> &nbsp; We paraphrased the question or modified the code context
+                in
+                the question, but the reference solution should stay the same after the perturbation. </li>
+              <li><strong>Semantic Perturbation:</strong> &nbsp; We changed the semantics of the reference solution
+                without
+                changing its difficulty.</li>
+              <li><strong>Difficult Rewrite:</strong> &nbsp; More complex and more difficult.</li>
+            </ul>
 
-          <p>
-            Here are more examples.
-          </p>
+            <p>
+              We also provided an Insertion style prompt and a Completion style prompt for each question (including
+              perturbation).
+            </p>
 
-          <p>
-            Insertion:
-          </p>
+            <ul>
+              <li><strong>Insertion:</strong> &nbsp; Models need to predict what should be written in the place of
+                "[insert]".</li>
+              <li><strong>Completion:</strong> &nbsp; Models need to predict what should b written after the prompt.
+              </li>
+            </ul>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+            <p>
+              Here are more examples.
+            </p>
+
+            <form>
+              <input type="radio" name="pattern" checked onclick=Click() title="Insertion">Insertion
+              <input type="radio" name="pattern" onclick=Click() title="Completion">Completion
+              <input type="radio" name="pattern" onclick=Click() title="Surface-Perturbation">Surface Perturbation
+              <input type="radio" name="pattern" onclick=Click() title="Semantic-Perturbation">Semantic Perturbation
+              <input type="radio" name="pattern" onclick=Click() title="Difficult-Rewrite">Difficult Rewrite
+            </form>
+
+            <script type="text/javascript">
+              function Click()
+              {
+                let div_title = "";
+                for(let button of document.getElementsByName('pattern'))
+                {
+                  if(button.checked)
+                  {
+                    div_title = button.title;
+                  }
+                }
+                for(let block of document.getElementsByClassName('examples'))
+                {
+                  block.style.display = (block.title === div_title) ? 'block' : 'none';
+                }
+              }
+
+            </script>
+
+            <div title="Insertion" class="examples" style="display: block;">
+              <p>
+                Insertion:
+              </p>
+
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy positive integer array like this:
 a = array([1,0,3])
 I would like to encode this as a 2D one-hot array(for natural number)
@@ -303,13 +343,19 @@ END SOLUTION
 &lt;code&gt;
 print(b)
 &lt;/code&gt;
-</code></pre></div></div>
+</code></pre>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            Completion:
-          </p>
+            <div title="Completion" class="examples" style="display: none;">
+              <p>
+                Completion:
+              </p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy positive integer array like this:
 a = array([1,0,3])
 I would like to encode this as a 2D one-hot array(for natural number)
@@ -324,13 +370,19 @@ a = np.array([1, 0, 3])
 b = ... # put solution in this variable
 BEGIN SOLUTION
 &lt;code&gt;
-</code></pre></div></div>
+</code></pre>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            Surface Perturbation:
-          </p>
+            <div title="Surface-Perturbation" class="examples" style="display: none;">
+              <p>
+                Surface Perturbation:
+              </p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy positive integer array like this
 a = array([1,2,3])
 I would like to encode this as a 2D one-hot array(for natural number)
@@ -350,13 +402,19 @@ END SOLUTION
 &lt;code&gt;
 print(b)
 &lt;/code&gt;
-</code></pre></div></div>
+</code></pre>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            Semantic Perturbation:
-          </p>
+            <div title="Semantic-Perturbation" class="examples" style="display: none;">
+              <p>
+                Semantic Perturbation:
+              </p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy integer array like this
 a = array([-1,0,3])
 I would like to encode this as a 2D one-hot array(for integers)
@@ -376,13 +434,19 @@ END SOLUTION
 &lt;code&gt;
 print(b)
 &lt;/code&gt;
-</code></pre></div></div>
+</code></pre>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            Difficult Rewrite:
-          </p>
+            <div title="Difficult-Rewrite" class="examples" style="display: none;">
+              <p>
+                Difficult Rewrite:
+              </p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Problem:
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>Problem:
 Let's say I have a 1d numpy array like this
 a = np.array([1.5,-0.4,1.3])
 I would like to encode this as a 2D one-hot array(only for elements appear in `a`)
@@ -402,245 +466,248 @@ END SOLUTION
 &lt;code&gt;
 print(b)
 &lt;/code&gt;
-</code></pre></div></div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Perturbation and Prompt. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Comparison. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Comparison</h2>
-        <div class="content has-text-justified">
-          <p>
-            Comparison between DS-1000 and other code generation benchmarks.
-          </p>
-          <img src="static/images/comparison.png">
-        </div>
-      </div>
-    </div>
-    <!--/ Comparison. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Result. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            Codex-davinci-002 on packages and perturbations.
-          </p>
-          <img src="static/images/codex002_result.png">
-        </div>
-      </div>
-    </div>
-    <!--/ Result. -->
-  </div>
-</section>
-
-<section>
-  <div class="cover" id="contentCover">
-    <!-- Leaderboard. -->
-    <div class="container-t">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="infoCard">
-            <div class="infoBody">
-              <div class="infoHeadline">
-                <h2>Leaderboard - Insertion</h2>
+</code></pre>
+                </div>
               </div>
-              <p align="left">
-              <div class="left">XXXX
-              </div>
-              </p>
-              <table class="table performanceTable">
-                <tr>
-                  <th>Rank</th>
-                  <th>Model</th>
-                  <th>Score</th>
-                </tr>
-                <tr>
-                  <td>
-                    <p>1</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    codex-davinci-002
-                    <p class="institution">OpenAI</p>
-                  </td>
-                  <td><b>34.6</b></td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <p>2</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    InCoder-6B
-                    <p class="institution">Facebook AI</p>
-                  </td>
-                  <td><b>3.8</b></td>
-                </tr>
-
-              </table>
             </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="infoCard">
-            <div class="infoBody">
-              <div class="infoHeadline">
-                <h2>Leaderboard - Completion</h2>
-              </div>
-              <p align="left">
-              <div class="left">XXXX
-              </div>
-              </p>
-              <table class="table performanceTable">
-                <tr>
-                  <th>Rank</th>
-                  <th>Model</th>
-                  <th>Score</th>
-                </tr>
 
-                <tr>
-                  <td>
-                    <p>1</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    codex-davinci-002
-                    <p class="institution">OpenAI</p>
-                  </td>
-                  <td><b>31.0</b></td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <p>2</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    codex-davinci-001
-                    <p class="institution">OpenAI</p>
-                  </td>
-                  <td><b>15.0</b></td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <p>3</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    codex-cushman-001
-                    <p class="institution">OpenAI</p>
-                  </td>
-                  <td><b>12.7</b></td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <p>4</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    CodeGen-6B
-                    <p class="institution">Salesforce Research</p>
-                  </td>
-                  <td><b>6.3</b></td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <p>5</p>
-                    <span class="date label label-default">
-                            Nov 08, 2022
-                          </span>
-                  </td>
-                  <td style="word-break:break-word;">
-                    InCoder-6B
-                    <p class="institution">Facebook AI</p>
-                  </td>
-                  <td><b>4.3</b></td>
-                </tr>
-
-              </table>
-            </div>
           </div>
         </div>
       </div>
+      <!--/ Perturbation and Prompt. -->
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="BibTeX">
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Comparison. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparison</h2>
+          <div class="content has-text-justified">
+            <p>
+              Comparison between DS-1000 and other code generation benchmarks.
+            </p>
+            <img src="static/images/comparison.png">
+          </div>
+        </div>
+      </div>
+      <!--/ Comparison. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Result. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              Codex-davinci-002 on packages and perturbations.
+            </p>
+            <img src="static/images/codex002_result.png">
+          </div>
+        </div>
+      </div>
+      <!--/ Result. -->
+    </div>
+  </section>
+
+  <section>
+    <div class="cover" id="contentCover">
+      <!-- Leaderboard. -->
+      <div class="container-t">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard - Insertion</h2>
+                </div>
+                <p align="left">
+                <div class="left">XXXX
+                </div>
+                </p>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Score</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-002
+                      <p class="institution">OpenAI</p>
+                    </td>
+                    <td><b>34.6</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B
+                      <p class="institution">Facebook AI</p>
+                    </td>
+                    <td><b>3.8</b></td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard - Completion</h2>
+                </div>
+                <p align="left">
+                <div class="left">XXXX
+                </div>
+                </p>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Score</th>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-002
+                      <p class="institution">OpenAI</p>
+                    </td>
+                    <td><b>31.0</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-001
+                      <p class="institution">OpenAI</p>
+                    </td>
+                    <td><b>15.0</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>3</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-cushman-001
+                      <p class="institution">OpenAI</p>
+                    </td>
+                    <td><b>12.7</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>4</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      CodeGen-6B
+                      <p class="institution">Salesforce Research</p>
+                    </td>
+                    <td><b>6.3</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>5</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B
+                      <p class="institution">Facebook AI</p>
+                    </td>
+                    <td><b>4.3</b></td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-body">
-          <h2 class="title">BibTeX</h2>
-          <pre><code>@article{DS-1000,
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{DS-1000,
           }</code></pre>
       </div>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://www.overleaf.com/project/63291315d6cd431ab1bed757">
-        <i class="fas fa-file-pdf" style="color:white"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github" style="color:white"></i>
-      </a>
     </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://www.overleaf.com/project/63291315d6cd431ab1bed757">
+          <i class="fas fa-file-pdf" style="color:white"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github" style="color:white"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
         </div>
       </div>
+      <!-- Leaderboard. -->
     </div>
-    <!-- Leaderboard. -->
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
