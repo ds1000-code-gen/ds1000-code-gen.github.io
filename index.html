@@ -214,6 +214,7 @@
               memorized during pretraining. The current best public system (Codex-002) achieves 34.6% accuracy,
               leaving ample room for improvement.
             </p>
+            <img src="static/images/fig1-example.jpg">
           </div>
         </div>
       </div>
@@ -235,7 +236,85 @@
               the multi-criteria automatic evaluation, which includes the test cases and the
               surface form checks (in yellow); a reference solution is provided at the bottom left.
             </p>
-            <img src="static/images/fig1-example.jpg">
+
+            <p>
+              Here are more examples.
+            </p>
+
+            <form>
+              <input type="radio" name="library" checked onclick=Click() title="NumPy">NumPy
+              <input type="radio" name="library" onclick=Click_2() title="SciPy">SciPy
+              <input type="radio" name="library" onclick=Click_2() title="Pandas">Pandas
+              <input type="radio" name="library" onclick=Click_2() title="TensorFlow">TensorFlow
+              <input type="radio" name="library" onclick=Click_2() title="PyTorch">PyTorch
+              <input type="radio" name="library" onclick=Click_2() title="Scikit-learn">Scikit-learn
+              <input type="radio" name="library" onclick=Click_2() title="Plotting">Plotting
+            </form>
+
+            <script type="text/javascript">
+              function Click_2()
+              {
+                let div_title = "";
+                for(let button of document.getElementsByName('library'))
+                {
+                  if(button.checked)
+                  {
+                    div_title = button.title;
+                  }
+                }
+                for(let block of document.getElementsByClassName('lib_examples'))
+                {
+                  block.style.display = (block.title === div_title) ? 'block' : 'none';
+                }
+              }
+
+            </script>
+
+            <div title="NumPy" class="lib_examples" style="display: block;">
+              <img src="static/images/numpy_example.jpg">
+              <p>
+                NumPy example problem involving randomness, requiring the use of a specialist knowledge test.
+              </p>
+            </div>
+
+            <div title="SciPy" class="lib_examples" style="display: none;">
+              <p>
+                SciPy:
+              </p>
+            </div>
+
+            <div title="Pandas" class="lib_examples" style="display: none;">
+              <img src="static/images/pandas_example.jpg">
+              <p>
+                An example problem of Pandas. We need to write reference solutions by ourselves
+                because high-vote replies from StackOverflow ignore the requirement "but does not exactly match it".
+              </p>
+            </div>
+
+            <div title="TensorFlow" class="lib_examples" style="display: none;">
+              <p>
+                TensorFlow:
+              </p>
+            </div>
+
+            <div title="PyTorch" class="lib_examples" style="display: none;">
+              <p>
+                PyTorch:
+              </p>
+            </div>
+
+            <div title="Scikit-learn" class="lib_examples" style="display: none;">
+              <p>
+                Scikit-learn:
+              </p>
+            </div>
+
+            <div title="Plotting" class="lib_examples" style="display: none;">
+              <p>
+                Plotting:
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -285,7 +364,14 @@
             </ul>
 
             <p>
-              Here are more examples.
+              Here is the performance of Codex-davinci-002 on DS-1000.
+            </p>
+
+            <img src="static/images/codex002_result.png">
+
+            <p>
+              Here are more example prompts, you can copy them and run the models on
+              playground of <a class="link" href="https://openai.com/api/">OpenAI</a>.
             </p>
 
             <form>
@@ -486,7 +572,22 @@ print(b)
           <h2 class="title is-3">Comparison</h2>
           <div class="content has-text-justified">
             <p>
-              Comparison between DS-1000 and other code generation benchmarks.
+              Table 4 compares DS-1000 to other datasets. Notably, the average of problem words in DS-1000
+              is much larger compared to other data science related datasets (e.g., DSP and CoNaLa).
+            </p>
+            <p>
+              More importantly, the problems in DS-1000 represent more diverse and
+              naturalistic intent and context formats that cannot be seen in any other datasets.
+            </p>
+            <p>
+              Unlike generic Python code generation benchmarks (MBPP and HumanEval),
+              we note that data science code generation benchmarks have fewer test cases since the annotators need
+              to define program inputs with complex objects such as square matrices, classifiers, or dataframes than
+              simple primitives, such as floats or lists.
+            </p>
+            <p>
+              Nevertheless, even a few test cases suffice for DS-1000 – only 1.8% of
+              the Codex-002-predicted solutions accepted by our evaluation are incorrect
             </p>
             <img src="static/images/comparison.png">
           </div>
@@ -497,24 +598,6 @@ print(b)
   </section>
 
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Result. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Results</h2>
-          <div class="content has-text-justified">
-            <p>
-              Codex-davinci-002 on packages and perturbations.
-            </p>
-            <img src="static/images/codex002_result.png">
-          </div>
-        </div>
-      </div>
-      <!--/ Result. -->
-    </div>
-  </section>
-
   <section>
     <div class="cover" id="contentCover">
       <!-- Leaderboard. -->
@@ -524,11 +607,9 @@ print(b)
             <div class="infoCard">
               <div class="infoBody">
                 <div class="infoHeadline">
-                  <h2>Leaderboard - Insertion</h2>
+                  <h2>Leaderboard - Models smaller than 50B</h2>
                 </div>
                 <p align="left">
-                <div class="left">XXXX
-                </div>
                 </p>
                 <table class="table performanceTable">
                   <tr>
@@ -536,6 +617,7 @@ print(b)
                     <th>Model</th>
                     <th>Score</th>
                   </tr>
+
                   <tr>
                     <td>
                       <p>1</p>
@@ -544,7 +626,71 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-002
+                      CodeGen-6B (Completion)
+                      <p class="institution">Salesforce Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2203.13474">Nijkamp et al., '22</a>
+                    </td>
+                    <td><b>6.3</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B (Completion)
+                      <p class="institution">Facebook AI</p>
+                      <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td><b>4.3</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>3</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B (Insertion)
+                      <p class="institution">Facebook AI</p>
+                      <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td><b>3.8</b></td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard - Models bigger than 50B</h2>
+                </div>
+                <p align="left">
+                </p>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Score</th>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-002 (Insertion)
                       <p class="institution">OpenAI</p>
                     </td>
                     <td><b>34.6</b></td>
@@ -558,59 +704,10 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      InCoder-6B
-                      <p class="institution">Facebook AI</p>
-                    </td>
-                    <td><b>3.8</b></td>
-                  </tr>
-
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="infoCard">
-              <div class="infoBody">
-                <div class="infoHeadline">
-                  <h2>Leaderboard - Completion</h2>
-                </div>
-                <p align="left">
-                <div class="left">XXXX
-                </div>
-                </p>
-                <table class="table performanceTable">
-                  <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Score</th>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p>1</p>
-                      <span class="date label label-default">
-                        Nov 08, 2022
-                      </span>
-                    </td>
-                    <td style="word-break:break-word;">
-                      codex-davinci-002
+                      codex-davinci-002 (Completion)
                       <p class="institution">OpenAI</p>
                     </td>
                     <td><b>31.0</b></td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p>2</p>
-                      <span class="date label label-default">
-                        Nov 08, 2022
-                      </span>
-                    </td>
-                    <td style="word-break:break-word;">
-                      codex-davinci-001
-                      <p class="institution">OpenAI</p>
-                    </td>
-                    <td><b>15.0</b></td>
                   </tr>
 
                   <tr>
@@ -621,10 +718,11 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-cushman-001
+                      codex-davinci-001 (Completion)
                       <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>12.7</b></td>
+                    <td><b>15.0</b></td>
                   </tr>
 
                   <tr>
@@ -635,24 +733,11 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      CodeGen-6B
-                      <p class="institution">Salesforce Research</p>
+                      codex-cushman-001 (Completion)
+                      <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>6.3</b></td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p>5</p>
-                      <span class="date label label-default">
-                        Nov 08, 2022
-                      </span>
-                    </td>
-                    <td style="word-break:break-word;">
-                      InCoder-6B
-                      <p class="institution">Facebook AI</p>
-                    </td>
-                    <td><b>4.3</b></td>
+                    <td><b>12.7</b></td>
                   </tr>
 
                 </table>
@@ -668,8 +753,12 @@ print(b)
     <div class="container is-max-desktop content">
       <div class="bibtex-body">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@article{DS-1000,
-          }</code></pre>
+        <pre><code>@article{Li2022DS1000,
+  title={DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation},
+  author={Chengxi Li and Yuhang Lai and Yiming Wang and Tianyi Zhang and Ruiqi Zhong and Luke Zettlemoyer and Scott Wen-tau Yih and Daniel Fried and Sida Wang and Tao Yu},
+  journal={ArXiv},
+  year={2022}
+}</code></pre>
       </div>
     </div>
   </section>
@@ -703,7 +792,6 @@ print(b)
           </div>
         </div>
       </div>
-      <!-- Leaderboard. -->
     </div>
   </footer>
 
