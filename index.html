@@ -190,19 +190,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce DS-1000, a code generation benchmark with a thousand data science
-            questions spanning seven Python libraries, such as NumPy and Pandas.
-            Compared to prior works, DS-1000 incorporates three core features.
-            First, our questions reflect diverse, realistic, and practical use cases since we
-            collected them from StackOverflow. Second, our metric is reliable, and we achieve
-            this by checking both functional correctness based on test cases and surface form
-            constraints (e.g., API usage or keywords); additionally, it has a low false discovery
-            rate of 1.8% on predictions by Codex-002. Finally, we proactively defend against memorization
-            by perturbing our questions; consequently, models cannot rely on solutions memorized during
-            pretraining; this is important because even minor perturbations can decrease Codex’s
-            performance by an absolute 50% on NumPy-100, a public problem set.
-            The current best public system (Codex-002) achieves 34.6% accuracy,
-            leaving ample room for improvement. We release our dataset at XXXX(Link).
+            We introduce DS-1000, a code generation benchmark with a thousand data science problems spanning
+            seven Python libraries, such as NumPy and Pandas. Compared to prior works, DS-1000 incorporates
+            three core features. First, our problems reflect diverse, realistic, and practical use cases since
+            we collected them from StackOverflow. Second, our automatic evaluation is reliable – only 1.8% of
+            the accepted solutions predicted by Codex-002 is incorrect; we achieve this with multi-criteria
+            metrics, checking both functional correctness by running test cases and surface form constraints
+            by restricting API usages or keywords. Finally, we proactively defend against memorization by
+            perturbing our problems; consequently, models pretrained on StackOverflow cannot rely on solutions
+            memorized during pretraining. The current best public system (Codex-002) achieves 34.6% accuracy,
+            leaving ample room for improvement. We release our benchmark at <a class="link" href="https://ds1000-code-gen.github.io">https://ds1000-code-gen.github.io</a>.
           </p>
         </div>
       </div>
