@@ -256,30 +256,50 @@
               Here are more examples.
             </p>
 
-            <form>
+            <div class="tabs is-centered example_lst">
+              <ul>
+                <li class="is-active"><a title="NumPy">NumPy</a></li>
+                <li><a title="SciPy">SciPy</a></li>
+                <li><a title="Pandas">Pandas</a></li>
+                <li><a title="TensorFlow">TensorFlow</a></li>
+                <li><a title="PyTorch">PyTorch</a></li>
+                <li><a title="Scikit-learn">Scikit-learn</a></li>
+                <li><a title="Matplotlib">Matplotlib</a></li>
+              </ul>
+            </div>
+
+            <!-- <form>
               <input type="radio" name="library" checked onclick=Click_2() title="NumPy">NumPy
               <input type="radio" name="library" onclick=Click_2() title="SciPy">SciPy
               <input type="radio" name="library" onclick=Click_2() title="Pandas">Pandas
               <input type="radio" name="library" onclick=Click_2() title="TensorFlow">TensorFlow
               <input type="radio" name="library" onclick=Click_2() title="PyTorch">PyTorch
               <input type="radio" name="library" onclick=Click_2() title="Scikit-learn">Scikit-learn
-              <input type="radio" name="library" onclick=Click_2() title="Plotting">Plotting
-            </form>
+              <input type="radio" name="library" onclick=Click_2() title="Matplotlib">Matplotlib
+            </form> -->
 
             <script type="text/javascript">
-              function Click_2()
+              document.querySelectorAll(".example_lst li").forEach(e => {
+                e.addEventListener("click", Click_2)
+              })
+
+              function Click_2(eve)
               {
-                let div_title = "";
-                for(let button of document.getElementsByName('library'))
+                console.log(eve.srcElement.innerText);
+                const iTxt = eve.srcElement.innerText
+                for(let v of document.querySelectorAll(".example_lst a"))
                 {
-                  if(button.checked)
+                  console.log(iTxt + " " + v.innerText + " " + (iTxt === v.innerText))
+                  if(iTxt === v.innerText)
                   {
-                    div_title = button.title;
+                    v.parentElement.className = "is-active";
+                  } else {
+                    v.parentElement.className = "";
                   }
                 }
                 for(let block of document.getElementsByClassName('lib_examples'))
                 {
-                  block.style.display = (block.title === div_title) ? 'block' : 'none';
+                  block.style.display = (block.title === iTxt) ? 'block' : 'none';
                 }
               }
 
@@ -328,10 +348,10 @@
               </p>
             </div>
 
-            <div title="Plotting" class="lib_examples" style="display: none;">
-              <img src="static/images/plotting_example.jpg">
+            <div title="Matplotlib" class="lib_examples" style="display: none;">
+              <img src="static/images/matplotlib_example.jpg">
               <p>
-                An example problem of Plotting. Plotting original questions often contain example figures which cannot be
+                An example problem of Matplotlib. Matplotlib original questions often contain example figures which cannot be
                 processed by current code models. We rewrite original questions into standalone questions in the form of comments.
               </p>
             </div>
@@ -773,7 +793,7 @@ print(b)
         <h2 class="title">BibTeX</h2>
         <pre><code>@article{Lai2022DS1000,
   title={DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation},
-  author={Chengxi Li and Yuhang Lai and Yiming Wang and Tianyi Zhang and Ruiqi Zhong and Luke Zettlemoyer and Scott Wen-tau Yih and Daniel Fried and Sida Wang and Tao Yu},
+  author={Yuhang Lai and Chengxi Li and Yiming Wang and Tianyi Zhang and Ruiqi Zhong and Luke Zettlemoyer and Scott Wen-tau Yih and Daniel Fried and Sida Wang and Tao Yu},
   journal={ArXiv},
   year={2022}
 }</code></pre>
@@ -785,10 +805,10 @@ print(b)
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://www.overleaf.com/project/63291315d6cd431ab1bed757">
+        <a class="icon-link" href="https://arxiv.org/">
           <i class="fas fa-file-pdf" style="color:white"></i>
         </a>
-        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/HKUNLP/DS-1000" class="external-link" disabled>
           <i class="fab fa-github" style="color:white"></i>
         </a>
       </div>
