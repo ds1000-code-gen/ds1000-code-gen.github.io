@@ -285,11 +285,9 @@
 
               function Click_2(eve)
               {
-                console.log(eve.srcElement.innerText);
                 const iTxt = eve.srcElement.innerText
                 for(let v of document.querySelectorAll(".example_lst a"))
                 {
-                  console.log(iTxt + " " + v.innerText + " " + (iTxt === v.innerText))
                   if(iTxt === v.innerText)
                   {
                     v.parentElement.className = "is-active";
@@ -414,29 +412,37 @@
               Here are more prompts, you can copy them and run the models on the
               playground of <a class="link" href="https://openai.com/api/">OpenAI</a>.
             </p>
-
-            <form>
-              <input type="radio" name="pattern" checked onclick=Click() title="Insertion">Insertion
-              <input type="radio" name="pattern" onclick=Click() title="Completion">Completion
-              <input type="radio" name="pattern" onclick=Click() title="Surface-Perturbation">Surface Perturbation
-              <input type="radio" name="pattern" onclick=Click() title="Semantic-Perturbation">Semantic Perturbation
-              <input type="radio" name="pattern" onclick=Click() title="Difficult-Rewrite">Difficult Rewrite
-            </form>
+            
+            <div class="tabs is-centered code_expl_lst">
+              <ul>
+                <li title="Insertion" class="is-active"><a>Insertion</a></li>
+                <li title="Completion"><a>Completion</a></li>
+                <li title="Surface-Perturbation"><a>Surface Perturbation</a></li>
+                <li title="Semantic-Perturbation"><a>Semantic Perturbation</a></li>
+                <li title="Difficult-Rewrite"><a>Difficult Rewrite</a></li>
+              </ul>
+            </div>
 
             <script type="text/javascript">
-              function Click()
+              document.querySelectorAll(".code_expl_lst li").forEach(e => {
+                e.addEventListener("click", Click)
+              })
+
+              function Click(eve)
               {
-                let div_title = "";
-                for(let button of document.getElementsByName('pattern'))
+                const iTxt = eve.srcElement.parentElement.title
+                for(let v of document.querySelectorAll(".code_expl_lst li"))
                 {
-                  if(button.checked)
+                  if(iTxt === v.title)
                   {
-                    div_title = button.title;
+                    v.className = "is-active";
+                  } else {
+                    v.className = "";
                   }
                 }
                 for(let block of document.getElementsByClassName('examples'))
                 {
-                  block.style.display = (block.title === div_title) ? 'block' : 'none';
+                  block.style.display = (block.title === iTxt) ? 'block' : 'none';
                 }
               }
 
