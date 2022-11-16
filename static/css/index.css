@@ -13,6 +13,10 @@ body {
     margin-bottom: 5px;
 }
 
+.highlight code {
+	font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+}
+
 .dnerf {
   font-variant: small-caps;
 }
