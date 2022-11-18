@@ -661,15 +661,14 @@ print(b)
             <div class="infoCard">
               <div class="infoBody">
                 <p align="left">
-                  <div class="left">Tips: By default, we set the max generation length to 1024 and the stop sequence tokens to "&lt;/code&gt;" and "# SOLUTION END".
-                  </div>
-                  <div class="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t=temperature, top-p=top-p cutoff
+                  <div class="left">Tips: t=temperature, top-p=top-p cutoff, max generation length = length, stop sequence tokens = ["tokens",...]
                   </div>
                 </p>
                 <table class="table performanceTable">
                   <tr>
                     <th>Rank</th>
                     <th>Model</th>
+                    <th>Details</th>
                     <th>Score</th>
                   </tr>
 
@@ -682,8 +681,13 @@ print(b)
                     </td>
                     <td style="word-break:break-word;">
                       codex-davinci-002 (Insertion)
-                      <p>t=0.2, top-p=0.95</p>
                       <p class="institution">OpenAI</p>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>43.3</b></td>
                   </tr>
@@ -696,9 +700,14 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-002 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-davinci-002
                       <p class="institution">OpenAI</p>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>39.2</b></td>
                   </tr>
@@ -711,10 +720,15 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-001 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-davinci-001
                       <p class="institution">OpenAI</p>
                       <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>20.2</b></td>
                   </tr>
@@ -727,10 +741,15 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-cushman-001 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-cushman-001
                       <p class="institution">OpenAI</p>
                       <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>18.1</b></td>
                   </tr>
@@ -743,10 +762,15 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      CodeGen-6B (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      CodeGen-6B
                       <p class="institution">Salesforce Research</p>
                       <a class="link" href="https://arxiv.org/abs/2203.13474">Nijkamp et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>8.4</b></td>
                   </tr>
@@ -759,10 +783,15 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      InCoder-6B (Insertion)
-                      <p>t=0.2, top-p=0.95</p>
+                      InCoder-6B
                       <p class="institution">Facebook AI</p>
                       <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>7.5</b></td>
                   </tr>
@@ -775,10 +804,15 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      InCoder-6B (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      InCoder-6B
                       <p class="institution">Facebook AI</p>
                       <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>length = 1024</p>
+                      <p>["&lt;/code&gt;", "# SOLUTION END"]</p>
                     </td>
                     <td><b>7.4</b></td>
                   </tr>
