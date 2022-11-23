@@ -144,7 +144,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://taoyds.github.io/assets/publications/DS-1000-11-16-2022.pdf"
+                  <a href="https://arxiv.org/abs/2211.11501"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -164,7 +164,7 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/HKUNLP/DS-1000/raw/main/ds1000_data.zip"
+                  <a href="https://github.com/HKUNLP/DS-1000/tree/main/ds1000_example"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -174,7 +174,7 @@
                 </span>
                 <!-- Twitter Link. -->
                 <span class="link-block">
-                  <a href="https://twitter.com/taoyds/status/1580987466974396417"
+                  <a href="https://twitter.com/taoyds/status/1595086401309388801"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-twitter"></i>
@@ -244,17 +244,22 @@
       <!-- Example. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Example</h2>
+          <h2 class="title is-3">Data Statistics and Examples</h2>
           <div class="content has-text-justified">
             <p>
-              The above is an example problem in DS-1000. The model needs to fill in the code
+              DS-1000 contains 1000 problems originating from 451 unique StackOverflow problems.
+              To defend against potential memoriza- tion, more than half of the DS-1000 problems
+              are modified from the original StackOverflow problems; they include 152 surface
+              perturbations, 235 semantic perturbations, and 162 difficult rewrites.
+            </p>
+
+            <img src="static/images/statistics.jpg">
+
+            <p>
+              Below are more DS-1000 examples. For each example, The model needs to fill in the code
               into “[insert]” in the prompt on the left; the code will then be executed to pass
               the multi-criteria automatic evaluation, which includes the test cases and the
               surface form constraints; a reference solution is provided at the bottom left.
-            </p>
-
-            <p>
-              Here are more examples.
             </p>
 
             <div class="tabs is-centered example_lst">
@@ -650,7 +655,7 @@ print(b)
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Baseline - Score on DS-1000</h2>
+            <h2 class="title is-3">Baselines</h2>
           </div>
         </div>
       </div>
@@ -662,15 +667,14 @@ print(b)
             <div class="infoCard">
               <div class="infoBody">
                 <p align="left">
-                  <div class="left">Tips: By default, we set the max generation length to 1024 and the stop sequence tokens to "&lt;/code&gt;" and "# SOLUTION END".
-                  </div>
-                  <div class="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t=temperature, top-p=top-p cutoff
+                  <div class="left">Notice: t=temperature, top-p=top-p cutoff, len = max generation length
                   </div>
                 </p>
                 <table class="table performanceTable">
                   <tr>
                     <th>Rank</th>
                     <th>Model</th>
+                    <th>Details</th>
                     <th>Score</th>
                   </tr>
 
@@ -682,11 +686,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-002 (Insertion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-davinci-002
                       <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>43.3</b></td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>43.3</td>
                   </tr>
 
                   <tr>
@@ -697,11 +706,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-002 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-davinci-002
                       <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>39.2</b></td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>39.2</td>
                   </tr>
 
                   <tr>
@@ -712,12 +726,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-davinci-001 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-davinci-001
                       <p class="institution">OpenAI</p>
                       <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>20.2</b></td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>20.2</td>
                   </tr>
 
                   <tr>
@@ -728,12 +746,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      codex-cushman-001 (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      codex-cushman-001
                       <p class="institution">OpenAI</p>
                       <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
                     </td>
-                    <td><b>18.1</b></td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>18.1</td>
                   </tr>
 
                   <tr>
@@ -744,12 +766,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      CodeGen-6B (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      CodeGen-6B
                       <p class="institution">Salesforce Research</p>
                       <a class="link" href="https://arxiv.org/abs/2203.13474">Nijkamp et al., '22</a>
                     </td>
-                    <td><b>8.4</b></td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>8.4</td>
                   </tr>
 
                   <tr>
@@ -760,12 +786,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      InCoder-6B (Insertion)
-                      <p>t=0.2, top-p=0.95</p>
+                      InCoder-6B
                       <p class="institution">Facebook AI</p>
                       <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
                     </td>
-                    <td><b>7.5</b></td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>7.5</td>
                   </tr>
 
                   <tr>
@@ -776,12 +806,16 @@ print(b)
                       </span>
                     </td>
                     <td style="word-break:break-word;">
-                      InCoder-6B (Completion)
-                      <p>t=0.2, top-p=0.95</p>
+                      InCoder-6B
                       <p class="institution">Facebook AI</p>
                       <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
                     </td>
-                    <td><b>7.4</b></td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>7.4</td>
                   </tr>
 
                 </table>
@@ -794,6 +828,15 @@ print(b)
     </div>
   </section>
 
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-body">
+        <h2 class="title">Acknowledgement</h2>
+        <p>We thank <a href="http://nasmith.github.io/">Noah A. Smith</a>, <a href="http://tianbaoxie.com/">Tianbao Xie</a>, <a href="http://scholar.google.com/citations?user=slwTiOUAAAAJ&hl=zh-CN&oi=ao">Shuyang Jiang</a> for their helpful feedback on this work.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-body">
@@ -802,7 +845,8 @@ print(b)
   title={DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation},
   author={Yuhang Lai and Chengxi Li and Yiming Wang and Tianyi Zhang and Ruiqi Zhong and Luke Zettlemoyer and Scott Wen-tau Yih and Daniel Fried and Sida Wang and Tao Yu},
   journal={ArXiv},
-  year={2022}
+  year={2022},
+  volume={abs/2211.11501}
 }</code></pre>
       </div>
     </div>
@@ -812,7 +856,7 @@ print(b)
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/">
+        <a class="icon-link" href="https://arxiv.org/pdf/2211.11501">
           <i class="fas fa-file-pdf" style="color:white"></i>
         </a>
         <a class="icon-link" href="https://github.com/HKUNLP/DS-1000" class="external-link" disabled>
