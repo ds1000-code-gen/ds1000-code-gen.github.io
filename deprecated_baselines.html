@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation">
+  <meta name="keywords" content="DS-1000, data-science, code-generation, codex, semantic-parsing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.table.min.css">
+  <!--  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="./stylesheets/layout.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
+
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section>
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Baselines (Deprecated)</h2>
+          </div>
+        </div>
+      </div>
+    <div class="cover" id="contentCover">
+      <!-- Baseline. -->
+      <div class="container-t">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="infoCard">
+              <div class="infoBody">
+                <p align="left">
+                  <div class="left">
+                    Notice: t=temperature, top-p=top-p cutoff, len = max generation length
+                  </div>
+                </p>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Details</th>
+                    <th>Score</th>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">
+                        Jun 05, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      gpt-3.5-turbo + SelfEvolve
+                      <p class="institution">Shanghai Jiao Tong University</p>
+                      <a class="link" href="https://arxiv.org/abs/2306.02907">Shuyang et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>57.1</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-002
+                      <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>43.3</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>3</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-002
+                      <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>39.2</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>4</p>
+                      <span class="date label label-default">
+                        Dec 4, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      MagicoderS-CL
+                      <p class="institution">University of Illinois at Urbana-Champaign</p>
+                      <a class="link" href="https://arxiv.org/abs/2312.02120">Yuxiang et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>37.5</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <br>
+                      <p>5</p>
+                      <span class="date label label-default">
+                        Oct 10, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Lemur-70B-Chat
+                      <p class="institution">XLang Lab & University of Hong Kong & Salesforce Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2310.06830">Yiheng and Hongjin and Chen et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      <br>
+                      Completion
+                      <p>-</p>
+                      <!-- <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p> -->
+                    </td>
+                    <td><br>34.5</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>6</p>
+                      <span class="date label label-default">
+                        Nov 29, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      CodeLlama-13B + Self-infilling
+                      <p class="institution">The University of Hong Kong & ByteDance</p>
+                      <a class="link" href="https://arxiv.org/abs/2311.17972">Zheng et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>greedy decoding</p>
+                      <p>len = 2048 + 512</p>
+                      <!-- <p>max_generated_tokens = 512</p> -->
+                    </td>
+                    <td>33.1</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>7</p>
+                      <span class="date label label-default">
+                        Jun 14, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      WizardCoder
+                      <p class="institution">Microsoft</p>
+                      <a class="link" href="https://arxiv.org/abs/2306.08568">Luo et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>32.8</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <br>
+                      <p>8</p>
+                      <span class="date label label-default">
+                        Oct 10, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Lemur-70B
+                      <p class="institution">XLang Lab & University of Hong Kong & Salesforce Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2310.06830">Yiheng and Hongjin and Chen et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      <br>
+                      Completion
+                      <p>-</p>
+                      <!-- <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p> -->
+                    </td>
+                    <td><br>30.7</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>9</p>
+                      <span class="date label label-default">
+                        Dec 4, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Magicoder-CL
+                      <p class="institution">University of Illinois at Urbana-Champaign</p>
+                      <a class="link" href="https://arxiv.org/abs/2312.02120">Yuxiang et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>29.9</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>10</p>
+                      <span class="date label label-default">
+                        Jun 14, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      WizardCoder
+                      <p class="institution">Microsoft</p>
+                      <a class="link" href="https://arxiv.org/abs/2306.08568">Luo et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>29.2</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>11</p>
+                      <span class="date label label-default">
+                        Nov 29, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      CodeLlama-7B + Self-infilling
+                      <p class="institution">The University of Hong Kong & ByteDance</p>
+                      <a class="link" href="https://arxiv.org/abs/2311.17972">Zheng et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>greedy decoding</p>
+                      <p>len = 2048 + 512</p>
+                      <!-- <p>max_generated_tokens = 512</p> -->
+                    </td>
+                    <td>28.7</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>12</p>
+                      <span class="date label label-default">
+                        May 09, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      StarCoder
+                      <p class="institution">Hugging Face & ServiceNow Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2305.06161">Li et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>26.0</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>12</p>
+                      <span class="date label label-default">
+                        May 09, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      StarCoder
+                      <p class="institution">Hugging Face & ServiceNow Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2305.06161">Li et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>25.4</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>14</p>
+                      <span class="date label label-default">
+                        May 09, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      StarCoderBase
+                      <p class="institution">Hugging Face & ServiceNow Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2305.06161">Li et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>24.0</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>15</p>
+                      <span class="date label label-default">
+                        May 09, 2023
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      StarCoderBase
+                      <p class="institution">Hugging Face & ServiceNow Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2305.06161">Li et al., '23</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.5</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>23.8</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>16</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-davinci-001
+                      <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>20.2</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>17</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      codex-cushman-001
+                      <p class="institution">OpenAI</p>
+                      <a class="link" href="https://arxiv.org/abs/2107.03374">Chen et al., '21</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>18.1</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>18</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      CodeGen-6B
+                      <p class="institution">Salesforce Research</p>
+                      <a class="link" href="https://arxiv.org/abs/2203.13474">Nijkamp et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>8.4</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>19</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B
+                      <p class="institution">Facebook AI</p>
+                      <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Insertion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>7.5</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>20</p>
+                      <span class="date label label-default">
+                        Nov 08, 2022
+                      </span>
+                    </td>
+                    <td style="word-break:break-word;">
+                      InCoder-6B
+                      <p class="institution">Facebook AI</p>
+                      <a class="link" href="https://arxiv.org/abs/2204.05999">Fried et al., '22</a>
+                    </td>
+                    <td style="word-break:break-word;">
+                      Completion
+                      <p>t=0.2, top-p=0.95</p>
+                      <p>len = 1024</p>
+                    </td>
+                    <td>7.4</td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
